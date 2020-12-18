@@ -9,29 +9,29 @@ import React, { useState } from 'react';
           
       },
       {
-          title: "HTML",
+          term: "HTML",
           Description: "Description",
           link: "/html",
           
       },
       {
-          title: "CSS",
+          term: "CSS",
           Description: "Description",
           link: "/css",
-          
+         
       },
       {
-          title: "JavaScript",
+          term: "JavaScript",
           Description: "Description",
           link: "/javascript"
       },
       {
-          title: "NodeJs",
+          term: "NodeJs",
           Description: "Description",
           link: "/web nodejs"
       },
       {
-          title: "SQL",
+          term: "SQL",
           Description: "Description",
           link: "/sql web"
       },
