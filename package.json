@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/textbook/starter-kit#readme",
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
+    "@babel/cli": "^7.12.10",
     "@babel/core": "^7.10.5",
     "@babel/node": "^7.10.5",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -52,8 +52,8 @@
     "html-webpack-tags-plugin": "^2.0.17",
     "nodemon": "^2.0.4",
     "prop-types": "^15.7.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "rimraf": "^3.0.2",
     "style-loader": "^1.2.1",
     "wait-on": "^5.1.0",
@@ -64,10 +64,16 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.10.5",
+    "bootstrap": "^4.5.3",
     "express": "^4.17.1",
     "helmet": "^3.23.3",
     "morgan": "^1.10.0",
-    "pg": "^8.4.1"
+    "pg": "^8.4.1",
+    "react-bootstrap": "^1.4.0",
+    "react-bootstrap-sidebar": "0.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-sidebar": "^3.0.2",
+    "reactstrap": "^8.7.1"
   },
   "engines": {
     "node": "^10 || ^12 || ^14"
