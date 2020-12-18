@@ -55,19 +55,24 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "rimraf": "^3.0.2",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
     "style-loader": "^1.2.1",
     "wait-on": "^5.1.0",
-    "webpack": "^4.44.0",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {
     "@babel/runtime": "^7.10.5",
+    "bootstrap": "^4.5.3",
     "express": "^4.17.1",
     "helmet": "^3.23.3",
     "morgan": "^1.10.0",
-    "pg": "^8.4.1"
+    "node-sass": "^5.0.0",
+    "pg": "^8.4.1",
+    "react-bootstrap": "^1.4.0"
   },
   "engines": {
     "node": "^10 || ^12 || ^14"
