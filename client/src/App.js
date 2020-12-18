@@ -1,24 +1,17 @@
-import React, { useEffect, useState } from "react";
-
-import "./App.css";
-import { getMessage } from "./service";
-import logo from "./logo.svg";
+import React from "react";
+import Header from "./Header/Header.js";
+import Footer from "./Footer/Footer.js";
+import "./App.scss";
+import MainBody from "./Main_Body/MainBody.js";
 
 export function App() {
-	const [message, setMessage] = useState("Loading...");
-
-	useEffect(() => {
-		getMessage().then((message) => setMessage(message));
-	}, []);
-
-	return (
-		<main role="main">
-			<div>
-				<img className="logo" data-qa="logo" src={logo} alt="Just the React logo" />
-				<h1 className="message" data-qa="message">{message}</h1>
-			</div>
-		</main>
-	);
+  return (
+    <React.Fragment>
+      <Header />
+	  <MainBody />
+	  <Footer />
+    </React.Fragment>
+  );
 }
 
 export default App;

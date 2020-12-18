@@ -1,0 +1,42 @@
+
+
+* {
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #efefef;
+  width: auto;
+  height: 6rem;
+}
+
+.homeBtn {
+  display: flex-end;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 2rem 3rem 0 0;
+  background-color: #d12f2f;
+  border: none;
+  color: #ffffff;
+  width: 4rem;
+  height: 2.5rem;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.loginBtn {
+  display: flex-end;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 2rem 5rem 0 0;
+  background-color: #575757;
+  border: none;
+  color: #ffffff;
+  width: 4rem;
+  height: 2.5rem;
+  font-size: medium;
+  font-weight: bold;
+}
