@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-
-import "./App.css";
+import React from "react";
+import Carousel from "./Carousel/LanguageCarousel";
+// import Carousel from "react-bootstrap/Carousel";
 import { getMessage } from "./service";
 import logo from "./logo.svg";
 import SidebarNav from "./components/SidebarNav";
+import "./App.scss";
 
 export function App() {
 	// const [message, setMessage] = useState("Loading...");
@@ -14,9 +15,9 @@ export function App() {
 
 	return (
 		<main role="main">
-			<div className="App">
-				
-				<SidebarNav />
+      <div className="App">
+			  <Carousel />
+        <SidebarNav />
 			</div>
 		</main>
 	);
