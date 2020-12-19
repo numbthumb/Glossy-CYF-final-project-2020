@@ -1,72 +1,24 @@
-// import path from "path";
+import path from "path";
 
-// export const httpsOnly = () => (req, res, next) => {
-// 	if (!req.secure) {
-// 		return res.redirect(301, `https://${req.headers.host}${req.originalUrl}`);
-// 	}
-// 	next();
-// };
+export const httpsOnly = () => (req, res, next) => {
+	if (!req.secure) {
+		return res.redirect(301, `https://${req.headers.host}${req.originalUrl}`);
+	}
+	next();
+};
 
-// export const logErrors = () => (err, _, res, next) => {
-// 	if (res.headersSent) {
-// 		return next(err);
-// 	}
-// 	console.error(err);
-// 	res.sendStatus(500);
-// };
+export const logErrors = () => (err, _, res, next) => {
+	if (res.headersSent) {
+		return next(err);
+	}
+	console.error(err);
+	res.sendStatus(500);
+};
 
-// export const pushStateRouting = (apiRoot, staticDir) => (req, res, next) => {
-// 	if (req.method === "GET" && !req.url.startsWith(apiRoot)) {
-// 		return res.sendFile(path.join(staticDir, "index.html"));
-// 	}
-// 	next();
-// };
+export const pushStateRouting = (apiRoot, staticDir) => (req, res, next) => {
+	if (req.method === "GET" && !req.url.startsWith(apiRoot)) {
+		return res.sendFile(path.join(staticDir, "index.html"));
+	}
+	next();
+};
 
-import React from "react";
-import Sidebar from "react-sidebar";
- 
-const mql = window.matchMedia(`(min-width: 800px)`);
- 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sidebarDocked: mql.matches,
-      sidebarOpen: false
-    };
- 
-    this.mediaQueryChanged = this.mediaQueryChanged.bind(this);
-    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
-  }
- 
-  componentWillMount() {
-    mql.addListener(this.mediaQueryChanged);
-  }
- 
-  componentWillUnmount() {
-    this.state.mql.removeListener(this.mediaQueryChanged);
-  }
- 
-  onSetSidebarOpen(open) {
-    this.setState({ sidebarOpen: open });
-  }
- 
-  mediaQueryChanged() {
-    this.setState({ sidebarDocked: mql.matches, sidebarOpen: false });
-  }
- 
-  render() {
-    return (
-      <Sidebar
-        sidebar={<b>Sidebar content</b>}
-        open={this.state.sidebarOpen}
-        docked={this.state.sidebarDocked}
-        onSetOpen={this.onSetSidebarOpen}
-      >
-        <b>Main content</b>
-      </Sidebar>
-    );
-  }
-}
- 
-export default App;
