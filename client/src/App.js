@@ -1,17 +1,24 @@
 import React from "react";
 import Carousel from "./Carousel/LanguageCarousel";
 // import Carousel from "react-bootstrap/Carousel";
+import { getMessage } from "./service";
+import logo from "./logo.svg";
+import SidebarNav from "./components/SidebarNav";
 import "./App.scss";
 
-
-
 export function App() {
+	// const [message, setMessage] = useState("Loading...");
 
+	// useEffect(() => {
+	// 	getMessage().then((message) => setMessage(message));
+	// }, []);
 
 	return (
 		<main role="main">
-
-			 <Carousel />
+      <div className="App">
+			  <Carousel />
+        <SidebarNav />
+			</div>
 		</main>
 	);
 }

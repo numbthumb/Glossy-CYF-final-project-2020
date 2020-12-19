@@ -15,7 +15,7 @@ if (process.env.DATABASE_URL) { //it's set in Heroku
 } else { //default local config
   config = {
     host: 'localhost',
-    database: 'cyf_hotel',
+    database: 'cyf-glossary',
     password: '',
     port: 5432
   }

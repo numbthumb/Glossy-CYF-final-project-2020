@@ -1,11 +1,29 @@
-.logo {
-    width: 100px;
+.App {
+    height: 100vh;
+    width: 100vw;
 }
 
-.message {
-    color: blue;
+.sidebar {
+    height: 100%;
+    width: 250px;
+    background-color: rgb(42, 52, 63);
 }
+.SidebarList{
+    height: auto;
+    width: 100%;
+    padding: 0;
+    background-color: aliceblue;
+}
+.SidebarList .row{
+    width: 100%;
+    height: 50px;
+   background-color: rgb(176, 187, 187);
+   list-style-type: none;
+   margin: 0;
+   flex-direction: row;
+   color: white;
+   justify-content: center;
+   align-items: center;
+   font-family: 'Courier New', Courier, monospace;
 
-.message:hover {
-    background-color: yellow;
 }
