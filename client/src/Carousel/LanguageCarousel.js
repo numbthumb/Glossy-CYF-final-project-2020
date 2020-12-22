@@ -1,6 +1,12 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./LanguageCarousel.scss";
+import htmlImage from "./picture/1.png"
+import cssImage from "./picture/2.png"
+import jsImage from "./picture/3.png"
+import reactImage from "./picture/react.png"
+import nodeImage from "./picture/node.png"
+import sqlImage from "./picture/sql.png"
 
 function LanguageCarousel () {
 
@@ -9,7 +15,7 @@ function LanguageCarousel () {
 			<Carousel.Item interval={1000} >
 				<img
 					className="gallery-cell"
-					src="/client/src/Carousel/picture/1.png"
+					src={htmlImage}
 					alt="First slide"
 				/>
 
@@ -17,7 +23,7 @@ function LanguageCarousel () {
 			<Carousel.Item interval={500}>
 				<img
 					className="gallery-cell"
-					src="/client/src/Carousel/picture/2.png"
+					src={cssImage}
 					alt="Third slide"
 				/>
 
@@ -25,7 +31,7 @@ function LanguageCarousel () {
 			<Carousel.Item>
 				<img
 					className="gallery-cell"
-					src="/client/src/Carousel/picture/3.png"
+					src={jsImage}
 					alt="Third slide"
 				/>
 
@@ -33,7 +39,7 @@ function LanguageCarousel () {
 			<Carousel.Item>
 				<img
 					className="gallery-cell"
-					src="/client/src/Carousel/picture/react.png"
+					src={reactImage}
 					alt="Third slide"
 				/>
 
@@ -41,7 +47,7 @@ function LanguageCarousel () {
 			<Carousel.Item>
 				<img
 					className="gallery-cell"
-					src="/client/src/Carousel/picture/node.png"
+					src={nodeImage}
 					alt="Third slide"
 				/>
 
@@ -49,7 +55,7 @@ function LanguageCarousel () {
 			<Carousel.Item>
 				<img
 					className="gallery-cell"
-					src="/client/src/Carousel/picture/sql.png"
+					src={sqlImage}
 					alt="Third slide"
 				/>
 
