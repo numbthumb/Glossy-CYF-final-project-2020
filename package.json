@@ -73,6 +73,8 @@
     "node-sass": "^5.0.0",
     "pg": "^8.4.1",
     "react-bootstrap": "^1.4.0",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0"
     "react-bootstrap-sidebar": "0.0.1",
     "react-router-dom": "^5.2.0",
     "react-sidebar": "^3.0.2",
