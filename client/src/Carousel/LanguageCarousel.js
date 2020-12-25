@@ -9,7 +9,7 @@ function LanguageCarousel () {
 			<Carousel.Item interval={1000} >
 				<img
 					className="gallery-cell"
-					src="/client/src/Carousel/picture/1.png"
+					src="client/src/Carousel/picture/1.png"
 					alt="First slide"
 				/>
 
