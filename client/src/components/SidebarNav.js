@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "react-sidebar";
-import "../App.css";
+import "./App.scss";
 import {SidebarData} from "./SidebarData";
 
 const SidebarNav = () => {
