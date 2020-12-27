@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "react-sidebar";
+// import Sidebar from "react-sidebar";
 import {SidebarData} from "./SidebarData";
 
 const SidebarNav = () => {
