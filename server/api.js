@@ -27,7 +27,7 @@ router.get("/terms/:term", function (req, res) {
         .catch((e) => console.error(e));
 });
 
-//Get all the terms for a language for example:  localhost:3100/api/language/?language=Javascript. 
+//Get all the terms for a language for example:  localhost:3100/api/language?language=Javascript. 
 //Also gets all terms if query is left out: http://localhost:3100/api/language
 
 http: router.get("/language", function (req, res) {
