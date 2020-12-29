@@ -5,11 +5,6 @@
 .message {
     color: blue;
 }
-<<<<<<< Updated upstream
-
-.message:hover {
-    background-color: yellow;
-=======
 .SidebarList{
     height: auto;
     width: 100%;
@@ -27,5 +22,16 @@
     height: 100vh;
     width: 200px;
     background-color:#f1ebeb;
->>>>>>> Stashed changes
+}
+
+.Description{
+    width:50%;
+    height:50vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+h3{
+    padding: 10px;
 }

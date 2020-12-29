@@ -15,8 +15,8 @@ if (process.env.DATABASE_URL) { //it's set in Heroku
 } else { //default local config
   config = {
     host: 'localhost',
-    database: 'cyf-glossary',
-    password: '',
+    database: 'glossary_db',
+    password: 'Nether2016',
     port: 5432
   }
 }

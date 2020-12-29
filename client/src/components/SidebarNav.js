@@ -4,26 +4,22 @@ import {SidebarData} from "./SidebarData";
 import { getLanguage } from "../service";
 
 const SidebarNav = () => {
-// const terms = fetch("/language");
 const [language, setLanguage] = useState([]);
 
-  useEffect(() => {
-    fetch(
-      `localhost:3100/api/language?language=Javascript`
-    )
-   .then((res)=> res.json())
-   .then((data)=>{
-      
-   })
-
-}, []);
-
-console.log(terms);
+useEffect(()=> {
+  async function getLang() {
+    const data = await getLanguage()
+    console.log(data);
+    setLanguage(data)
+  }
+  getLang()
+}, [])
 
     return (
       <div className="sidebar">
         <ul className="SidebarList">
-          {SidebarData.map((value, key) =>{
+          {language.map((value, key) =>{
+
             return (
               <li 
                 key={key} 

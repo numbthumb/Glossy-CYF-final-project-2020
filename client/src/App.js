@@ -1,8 +1,5 @@
 import React from "react";
-<<<<<<< Updated upstream
-=======
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
->>>>>>> Stashed changes
 import Header from "./Header/Header.js";
 import Footer from "./Footer/Footer.js";
 import "./App.scss";
@@ -11,25 +8,8 @@ import Carousel from "./Carousel/LanguageCarousel";
 // import Carousel from "react-bootstrap/Carousel";
 import { getMessage } from "./service";
 import SidebarNav from "./components/SidebarNav";
-<<<<<<< Updated upstream
-
-
-export function App() {
-  return (
-    <React.Fragment>
-      <Header />
-      <main role="main">
-      <div className="App">
-			  <Carousel />
-        <SidebarNav />
-			</div>
-		</main>
-	  <MainBody />
-	  <Footer />
-    </React.Fragment>
-=======
-import NewSidebar from "./components/NewSidebar";
 import Body from "./components/Body.js";
+import Resources from "./components/Resources";
 
 export function App() {
   return (
@@ -38,19 +18,18 @@ export function App() {
         <Link to="/body">Terms Page</Link>
       </div>
       <Header />
-      {/* <SidebarNav /> */}
       <Switch>
         <Route exact path="/">
 			   <Carousel />
         </Route>
         <Route path="/body">
+      <SidebarNav />
           <Body />
         </Route>
       </Switch>
 	 {/*   <MainBody />*/}
 	  <Footer />
     </BrowserRouter>
->>>>>>> Stashed changes
   );
 }
 
