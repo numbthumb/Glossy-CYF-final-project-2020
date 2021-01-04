@@ -32,9 +32,9 @@ router.get("/terms/:term", function (req, res) {
 
 http: router.get("/language", function (req, res) {
     let language = req.query.language;
-    let query = "SELECT terms.term FROM terms";
+    let query = "SELECT * FROM terms";
     if (language) {
-        query = `SELECT terms.term FROM terms WHERE lower(terms.programming_language) LIKE '%${language.toLowerCase()}%' ORDER BY term`;
+        query = `SELECT * FROM terms WHERE lower(terms.programming_language) LIKE '%${language.toLowerCase()}%' ORDER BY term`;
     }
     Connection.query(query)
         .then((result) => res.json(result.rows))

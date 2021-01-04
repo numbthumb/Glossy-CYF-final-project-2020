@@ -1,19 +1,10 @@
 import React,{useState, useEffect}from "react";
+import {Link} from 'react-router-dom';
 import Sidebar from "react-sidebar";
-import {SidebarData} from "./SidebarData";
-import { getLanguage } from "../service";
 
-const SidebarNav = () => {
-const [language, setLanguage] = useState([]);
 
-useEffect(()=> {
-  async function getLang() {
-    const data = await getLanguage()
-    console.log(data);
-    setLanguage(data)
-  }
-  getLang()
-}, [])
+const SidebarNav = ({language, setTerm}) => {
+
 
     return (
       <div className="sidebar">
@@ -25,10 +16,10 @@ useEffect(()=> {
                 key={key} 
                 className="row" 
                 onClick={()=>{
-                  window.location.pathname=value.link;
+                  setTerm(language.filter(item => item.term === value.term)[0]);
                 }}
                 >
-                  <div>{value.term}</div>
+                  <Link>{value.term}</Link>
               </li>
               )  
             })}
