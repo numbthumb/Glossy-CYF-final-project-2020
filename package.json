@@ -70,16 +70,20 @@
     "bootstrap": "^4.5.3",
     "express": "^4.17.1",
     "helmet": "^3.23.3",
+    "modules": "^0.4.0",
     "morgan": "^1.10.0",
+    "node": "^15.4.0",
+    "node-modules": "^1.0.1",
     "node-sass": "^5.0.0",
     "pg": "^8.4.1",
     "react-bootstrap": "^1.4.0",
-    "sass": "^1.30.0",
-    "sass-loader": "^10.1.0",
     "react-bootstrap-sidebar": "0.0.1",
+    "react-player": "^2.7.2",
     "react-router-dom": "^5.2.0",
     "react-sidebar": "^3.0.2",
-    "reactstrap": "^8.7.1"
+    "reactstrap": "^8.7.1",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0"
   },
   "engines": {
     "node": "^10 || ^12 || ^14"
