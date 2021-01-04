@@ -3,7 +3,6 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Header from "./Header/Header.js";
 import Footer from "./Footer/Footer.js";
 import "./App.scss";
-import MainBody from "./Main_Body/MainBody.js";
 import Carousel from "./Carousel/LanguageCarousel";
 // import Carousel from "react-bootstrap/Carousel";
 import { getMessage } from "./service";
@@ -27,7 +26,6 @@ useEffect(()=> {
  
 }, [])
 
-
   return (
     <BrowserRouter>
       <div>
@@ -49,5 +47,4 @@ useEffect(()=> {
    
   );
 }
-
 export default App;

@@ -1,12 +1,12 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./LanguageCarousel.scss";
-import htmlImage from "./picture/1.png"
-import cssImage from "./picture/2.png"
-import jsImage from "./picture/3.png"
-import reactImage from "./picture/react.png"
-import nodeImage from "./picture/node.png"
-import sqlImage from "./picture/sql.png"
+import htmlImage from "./picture/1.png";
+import cssImage from "./picture/2.png";
+import jsImage from "./picture/3.png";
+import reactImage from "./picture/react.png";
+import nodeImage from "./picture/node.png";
+import sqlImage from "./picture/sql.png";
 
 function LanguageCarousel () {
 

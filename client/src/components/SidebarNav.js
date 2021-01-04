@@ -1,16 +1,13 @@
 import React,{useState, useEffect}from "react";
 import {Link} from 'react-router-dom';
 import Sidebar from "react-sidebar";
-
+import { SidebarData } from "./SidebarData";
 
 const SidebarNav = ({language, setTerm}) => {
-
-
     return (
       <div className="sidebar">
         <ul className="SidebarList">
           {language.map((value, key) =>{
-
             return (
               <li 
                 key={key} 
@@ -26,6 +23,6 @@ const SidebarNav = ({language, setTerm}) => {
           </ul>
        </div>
     )
-};
+	};
 
-export default SidebarNav
+export default SidebarNav;

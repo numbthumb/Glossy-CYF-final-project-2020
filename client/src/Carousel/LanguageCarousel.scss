@@ -1,6 +1,6 @@
 .gallery-cell {
-    width: 66%;
-    height: 200px;
+    width: 10%;
+    height: 100px;
     margin-right: 10px;
     background: #8C8;
     counter-increment: gallery-cell;
@@ -9,10 +9,12 @@
   
   .carousel-inner{
     display: flex;
+    text-align: center;
   }
   /* cell number */
   .gallery-cell:before {
     display: inline-block;
+    justify-content: center;
     text-align: center;
     content: counter(gallery-cell);
     line-height: 200px;
