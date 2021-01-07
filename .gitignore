@@ -3,3 +3,4 @@ dist/
 node_modules/
 .DS_Store
 # client/src/SEARCHBAR/MOCK_DATA.json
+.env
