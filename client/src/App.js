@@ -7,11 +7,11 @@ import MainBody from "./Main_Body/MainBody.js";
 import Carousel from "./Carousel/LanguageCarousel";
 // import Carousel from "react-bootstrap/Carousel";
 import { getMessage } from "./service";
+import Resources from "./components/Resources";
 import SidebarNav from "./components/SidebarNav";
 import Body from "./components/Body.js";
-import Resources from "./components/Resources";
 import { getLanguage } from "./service";
-// import AddGlossaryData from "./components/AddGlossaryData";
+import SidebarData from "./components/SidebarData.js";
 export function App() {
 const [language, setLanguage] = useState([]);
 const [term, setTerm] = useState({});
@@ -30,8 +30,8 @@ useEffect(()=> {
 
   return (
     <BrowserRouter>
-      <div>
-        <Link to="/body">Terms Page</ Link>
+      <div className="termPage">
+        <Link to="/body">Terms Page</ Link>       
       </div>
       <Header />
       <Switch>
@@ -39,8 +39,12 @@ useEffect(()=> {
 			   <Carousel />
         </Route>
         <Route path="/body">
-      <SidebarNav language={language} setTerm={setTerm} />
-          <Body language={term}/>
+          <div className="sideBody">
+            <SidebarNav language={language} setTerm={setTerm} />
+            
+            <Body language={term}/>
+          </div>
+      
         </Route>
       </Switch>
 	 {/* {  <MainBody />} */}

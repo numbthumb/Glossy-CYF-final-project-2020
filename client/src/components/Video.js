@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import ReactPlayer from "react-player";
 
 const Video = ({links}) => {
@@ -17,12 +18,13 @@ const Video = ({links}) => {
                     allow='autoplay; encrypted-media'
                     allowFullScreen
                     title='video'
+                    className="video"
                    />
                      )
                 } else {
                     return(
 
-                  <li>{link}</li>
+                  <li className="resourceLists"><a href={link} target="_blank">W3Schools Resource {index - 1}</a></li>
                     )
                 }
                   
