@@ -1,37 +1,35 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React from "react";
 import ReactPlayer from "react-player";
 
-const Video = ({links}) => {
-  
-   console.log(links.map(link => link.includes("https://www.youtube.com")))
-    console.log(links);
-    return (
-        <div className="youtubeRes">
-            {links.map((link, index) => {
+const Video = ({ links }) => {
 
-                if (link.includes("https://www.youtube.com")) {
-                    return(                 
+	console.log(links.map((link) => link.includes("https://www.youtube.com")));
+	console.log(links);
+	return (
+		<div className="youtubeRes">
+			{links.map((link, index) => {
 
-                    <ReactPlayer url={link}
-                    frameborder='0'
-                    allow='autoplay; encrypted-media'
-                    allowFullScreen
-                    title='video'
-                    className="video"
-                   />
-                     )
-                } else {
-                    return(
+				if (link.includes("https://www.youtube.com")) {
+					return(
 
-                  <li className="resourceLists"><a href={link} target="_blank">W3Schools Resource {index - 1}</a></li>
-                    )
-                }
-                  
-            })} 
-             
-        </div>
-    )
-}
+						<ReactPlayer url={link}
+							frameborder='0'
+							allow='autoplay; encrypted-media'
+							allowFullScreen
+							title='video'
+						/>
+					);
+				} else {
+					return(
+
+						<li>{link}</li>
+					);
+				}
+
+			})}
+
+		</div>
+	);
+};
 
 export default Video;

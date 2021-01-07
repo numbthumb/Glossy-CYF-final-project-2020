@@ -1,0 +1,18 @@
+.LoginFormBox {
+position: absolute;
+  padding: 8rem 12rem;
+  top: 30%;
+  left: 35%;
+}
+
+.LoginForm {
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .FormLabel {
+    display: block;
+    padding-bottom: 0.5rem;
+    color: #000000;
+  }

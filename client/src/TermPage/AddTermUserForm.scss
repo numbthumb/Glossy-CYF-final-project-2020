@@ -1,0 +1,47 @@
+.AddTermBox {
+  position: absolute;
+  padding: 8rem 12rem;
+  top: 15%;
+  left: 15%;
+  background-color: #000;
+  //   opacity: 30%;
+  border-radius: 1rem;
+}
+
+.AddTermBtn {
+  //   display: inline-block;
+}
+
+.AddTermForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.FormInput {
+  margin: 0 3rem 1rem 0;
+  width: 18rem;
+  height: 1.5rem;
+}
+
+.FormInputDefinition {
+  margin: 0 3rem 1rem 0;
+  width: 18rem;
+  height: 4rem;
+}
+
+.FormLabel {
+  display: block;
+  padding-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.SubmitBtn {
+  width: 5rem;
+  height: 2rem;
+  background-color: #d12f2f;
+  border: none;
+  color: #ffffff;
+  font-size: medium;
+  font-weight: bold;
+}
