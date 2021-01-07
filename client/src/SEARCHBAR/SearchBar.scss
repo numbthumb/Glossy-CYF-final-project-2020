@@ -1,0 +1,17 @@
+.search-bar{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+.glossary-logo{
+    width: 30rem;
+}
+.search-bar{
+    width: 35rem;
+}
+.search-bar-container{
+    border:2px solid grey;
+    padding:10px;
+    background-color:#d12f2f;
+}

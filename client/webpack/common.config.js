@@ -13,8 +13,9 @@ module.exports = {
 				test: /\.(png|svg|jpe?g|gif)$/,
 				loader: "file-loader",
 			},
+
 			{
-				test: /\.s[ac]ss$/i,
+				test: /\.s?[ac]ss$/i,
 				use: [
 					// Creates `style` nodes from JS strings
 					"style-loader", // Translates CSS into CommonJS
