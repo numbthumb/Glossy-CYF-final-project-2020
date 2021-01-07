@@ -11,11 +11,10 @@ import SearchBar from "./Home/Searchbar/Searchbar.js";
 // import SidebarNav from "./TermPage/SidebarNav/SidebarNav.js";
 import AddTermUserBtn from "./TermPage/AddTermUserBtn.js";
 import { getMessage } from "./service";
+import Resources from "./components/Resources";
 import SidebarNav from "./components/SidebarNav";
 import Body from "./components/Body.js";
-import Resources from "./components/Resources";
 import { getLanguage } from "./service";
-// import AddGlossaryData from "./components/AddGlossaryData";
 
 export function App() {
   const [language, setLanguage] = useState([]);

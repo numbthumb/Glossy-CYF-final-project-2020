@@ -14,9 +14,9 @@ const Resources = ({language}) => {
                 <h3>Resources</h3>
             </div>
             <div className="resourceLink">
-                <h6>Youtube Resources</h6> 
-                <Video links={language.links}/>
-          <h6>Resource Link</h6>
+              <Video links={language.links}/>
+               
+          
          </div> 
         </>
          
