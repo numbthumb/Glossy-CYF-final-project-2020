@@ -1,5 +1,6 @@
 import React,{ useState } from "react";
 import MOCK_DATA from "./MOCK_DATA.json";
+import glossarylogo from "../Carousel/picture/gll.png";
 import "./SearchBar.scss";
 
 
@@ -10,7 +11,7 @@ const SearchBar = () => {
 			<div className="search-bar" >
 				<div><img
 					className="glossary-logo"
-					src="client/src/Carousel/picture/gll.png"
+					src={glossarylogo}
 					alt="glossary-bar"
 				/></div>
 				<div className="search-bar-container">
