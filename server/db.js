@@ -15,8 +15,8 @@ if (process.env.DATABASE_URL) { //it's set in Heroku
 } else { //default local config
   config = {
     host: 'localhost',
-    database: 'glossary_db',
-    password: 'Nether2016',
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
     port: 5432
   }
 }
