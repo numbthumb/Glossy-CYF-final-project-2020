@@ -4,8 +4,8 @@ import Container from "react-bootstrap/Container";
 import Header from "./Header/Header.js";
 import Footer from "./Footer/Footer.js";
 import "./App.scss";
-import Carousel from "./Home/Carousel/LanguageCarousel";
-import SearchBar from "./Home/Searchbar/Searchbar.js";
+import Carousel from "./Carousel/LanguageCarousel";
+import SearchBar from "./SEARCHBAR/SearchBar.js";
 // import { getMessage } from "./service";
 // import logo from "./logo.svg";
 // import SidebarNav from "./TermPage/SidebarNav/SidebarNav.js";
@@ -17,45 +17,45 @@ import Body from "./components/Body.js";
 import { getLanguage } from "./service";
 
 export function App() {
-  const [language, setLanguage] = useState([]);
-  const [term, setTerm] = useState({});
+	const [language, setLanguage] = useState([]);
+	const [term, setTerm] = useState({});
 
-  useEffect(() => {
-    async function getLang() {
-      const data = await getLanguage();
-      console.log(data);
-      setLanguage(data);
-      setTerm(data[0]);
-    }
-    getLang();
-  }, []);
+	useEffect(() => {
+		async function getLang() {
+			const data = await getLanguage();
+			console.log(data);
+			setLanguage(data);
+			setTerm(data[0]);
+		}
+		getLang();
+	}, []);
 
-  return (
-    <Router>
-      <Header />
-      <Container>
-        <Switch>
-          <Route exact path="/">
-            <Link to="/TermPage">
-              <SearchBar />
-              <Carousel />
-            </Link>
-          </Route>
-          <Route exact path="/TermPage">
-            <AddTermUserBtn />
-            <SidebarNav language={language} setTerm={setTerm} />
-            <Body language={term} />
-          </Route>
-          <Route>
-            {/* <Link to="/LoginPage">
+	return (
+		<Router>
+			<Header />
+			<Container>
+				<Switch>
+					<Route exact path="/">
+						<Link to="/TermPage">
+							<SearchBar />
+							<Carousel />
+						</Link>
+					</Route>
+					<Route exact path="/TermPage">
+						<AddTermUserBtn />
+						<SidebarNav language={language} setTerm={setTerm} />
+						<Body language={term} />
+					</Route>
+					<Route>
+						{/* <Link to="/LoginPage">
               <BackToHome />
               <LoginForm />
             </Link> */}
-          </Route>
-        </Switch>
-      </Container>
-      <Footer />
-    </Router>
-  );
+					</Route>
+				</Switch>
+			</Container>
+			<Footer />
+		</Router>
+	);
 }
 export default App;
