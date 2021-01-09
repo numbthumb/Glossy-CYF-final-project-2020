@@ -1,4 +1,6 @@
 const { Pool } = require('pg')
+import dotenv from 'dotenv'
+dotenv.config()
 
 let pool;
 let config;
