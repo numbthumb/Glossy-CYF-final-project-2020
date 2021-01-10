@@ -5,7 +5,7 @@ import { Connection } from "./db";
 
 const router = new Router();
 
-router.get("/", ( res, next) => {
+router.get("/", (req, res, next) => {
 	
 	Connection.connect((err) => {
 		if (err) {
