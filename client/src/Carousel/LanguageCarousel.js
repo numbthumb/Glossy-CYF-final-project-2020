@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
+import {Link } from "react-router-dom";
 import "./LanguageCarousel.scss";
 import htmlImage from "./picture/1.png";
 import cssImage from "./picture/2.png";
@@ -13,51 +14,57 @@ function LanguageCarousel () {
 	return (
 		<Carousel indicators= {false} >
 			<Carousel.Item interval={1000} >
-				<img
-					className="gallery-cell"
-					src={htmlImage}
-					alt="First slide"
-				/>
-
+				<Link to="/html">
+					<img
+						className="gallery-cell"
+						src={htmlImage}
+						alt="First slide"
+					/>
+				</Link>
 			</Carousel.Item>
 			<Carousel.Item interval={500}>
-				<img
+				<Link to="/CSS"><img
 					className="gallery-cell"
 					src={cssImage}
 					alt="Third slide"
 				/>
+				</Link>
 
 			</Carousel.Item>
 			<Carousel.Item>
-				<img
+				<Link to="/Javascript"><img
 					className="gallery-cell"
 					src={jsImage}
 					alt="Third slide"
 				/>
+				</Link>
 
 			</Carousel.Item>
 			<Carousel.Item>
-				<img
+				<Link to="/React"><img
 					className="gallery-cell"
 					src={reactImage}
 					alt="Third slide"
 				/>
+				</Link>
 
 			</Carousel.Item>
 			<Carousel.Item>
-				<img
+				<Link to="/Node"><img
 					className="gallery-cell"
 					src={nodeImage}
 					alt="Third slide"
 				/>
+				</Link>
 
 			</Carousel.Item>
 			<Carousel.Item>
-				<img
+				<Link to="/SQL"><img
 					className="gallery-cell"
 					src={sqlImage}
 					alt="Third slide"
 				/>
+				</Link>
 
 			</Carousel.Item>
 		</Carousel>
