@@ -7,59 +7,41 @@ import jsImage from "./picture/3.png";
 import reactImage from "./picture/react.png";
 import nodeImage from "./picture/node.png";
 import sqlImage from "./picture/sql.png";
+import { Link } from "react-router-dom";
 
 function LanguageCarousel () {
-
+	const items = [
+		{ src: htmlImage, alt: "html", route: "/html" },
+		{ src: cssImage, alt: "css" ,route: "/CSS" },
+		{ src: jsImage, alt: "javascript",route: "/Javascript" },
+		{ src: reactImage, alt: "react" ,route: "/React" },
+		{ src: nodeImage, alt: "node",route: "/Node" },
+		{ src: sqlImage, alt: "sql",route: "/SQL" },
+	];
+	const l = items.length;
 	return (
 		<Carousel indicators= {false} >
-			<Carousel.Item interval={1000} >
-				<img
-					className="gallery-cell"
-					src={htmlImage}
-					alt="First slide"
-				/>
+			{items.map((item, index) => [items[(index+l -1)%l], item,items[(index+1)%l]])
+				.map((group, index) => <Carousel.Item interval={1000} key={index} >
+					<Link to={group[0].route}><img
+						className="gallery-cell"
+						src={group[0].src}
+						alt={group[0].alt}
+					/></Link>
+					<Link to={group[1].route}><img
+						className="gallery-cell"
+						src={group[1].src}
+						alt={group[1].alt}
+					/></Link>
+					<Link to={group[2].route}><img
+						className="gallery-cell"
+						src={group[2].src}
+						alt={group[2].alt}
+					/></Link>
 
-			</Carousel.Item>
-			<Carousel.Item interval={500}>
-				<img
-					className="gallery-cell"
-					src={cssImage}
-					alt="Third slide"
-				/>
+				</Carousel.Item> ) }
 
-			</Carousel.Item>
-			<Carousel.Item>
-				<img
-					className="gallery-cell"
-					src={jsImage}
-					alt="Third slide"
-				/>
 
-			</Carousel.Item>
-			<Carousel.Item>
-				<img
-					className="gallery-cell"
-					src={reactImage}
-					alt="Third slide"
-				/>
-
-			</Carousel.Item>
-			<Carousel.Item>
-				<img
-					className="gallery-cell"
-					src={nodeImage}
-					alt="Third slide"
-				/>
-
-			</Carousel.Item>
-			<Carousel.Item>
-				<img
-					className="gallery-cell"
-					src={sqlImage}
-					alt="Third slide"
-				/>
-
-			</Carousel.Item>
 		</Carousel>
 	);
 }
