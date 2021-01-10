@@ -1,29 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
 import Header from "./Header/Header.js";
 import Footer from "./Footer/Footer.js";
 import "./App.scss";
-import MainBody from "./Main_Body/MainBody.js";
 import Carousel from "./Carousel/LanguageCarousel";
-// import Carousel from "react-bootstrap/Carousel";
+import SearchBar from "./SEARCHBAR/SearchBar.js";
+// import { getMessage } from "./service";
+// import logo from "./logo.svg";
+// import SidebarNav from "./TermPage/SidebarNav/SidebarNav.js";
+import AddTermUserBtn from "./TermPage/AddTermUserBtn.js";
 import { getMessage } from "./service";
-import logo from "./logo.svg";
+import Resources from "./components/Resources";
 import SidebarNav from "./components/SidebarNav";
-
+import Body from "./components/Body.js";
+import { getLanguage } from "./service";
 
 export function App() {
-  return (
-    <React.Fragment>
-      <Header />
-      <main role="main">
-      <div className="App">
-			  <Carousel />
-        <SidebarNav />
-			</div>
-		</main>
-	  <MainBody />
-	  <Footer />
-    </React.Fragment>
-  );
-}
+	const [language, setLanguage] = useState([]);
+	const [term, setTerm] = useState({});
 
+	useEffect(() => {
+		async function getLang() {
+			const data = await getLanguage();
+			console.log(data);
+			setLanguage(data);
+			setTerm(data[0]);
+		}
+		getLang();
+	}, []);
+
+	return (
+		<Router>
+			<Header />
+			<Container>
+				<Switch>
+					<Route exact path="/">
+						<Link to="/TermPage">
+							<SearchBar />
+							<Carousel />
+						</Link>
+					</Route>
+					<Route exact path="/TermPage">
+						<AddTermUserBtn />
+						<SidebarNav language={language} setTerm={setTerm} />
+						<Body language={term} />
+					</Route>
+					<Route>
+						{/* <Link to="/LoginPage">
+              <BackToHome />
+              <LoginForm />
+            </Link> */}
+					</Route>
+				</Switch>
+			</Container>
+			<Footer />
+		</Router>
+	);
+}
 export default App;
