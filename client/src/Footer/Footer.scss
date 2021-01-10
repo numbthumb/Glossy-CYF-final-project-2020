@@ -1,83 +1,43 @@
 
-
-
-
-// .footer {
-//     position:absolute;
-//     left:0;
-//     bottom:0;
-//     right:0;
-//   display: flex;
-//   justify-content: center;
-//   align-content: center;
-//   background-color: #efefef;
-// }
+.footer {
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 7.5rem;
+  background-color: #efefef;
+}
 
 .registration {
-
-    align-items: center;
-    margin-top: 280px;
-    justify-content: center;
-   
-
+  margin: 6rem 0 0 18rem;
 }
 
 #communityLinks {
-    display: inline-block; 
-    padding: 1rem 0 0 0;
+  margin: 0 0 0 5rem;
+  padding: 1rem 0 0 0;
 }
 
 #socialLinks {
-    display: inline-block;
-    justify-content: flex-start;
-    align-content: space-even;
-    margin: 0;
-    padding: 1rem 0 0 0;
-    text-align: left;
-
- 
-}
-
-span {
-    display: flex;   
-    align-content: center;
-    color: red; 
-    font-size: 20px;
-}
-
-.socialLink{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 500px;
-    color: red;
-    font-size: 20px;
-    
-}
-.socialLists{
-     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 500px;
-    
-
-}
-
+  margin: 0 0 0 5rem;
+  padding: 1rem 0 0 0;
+  
 ul {
-    display: inline-block;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 0;
-    padding: 0;
+  display: inline-block;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
 }
 
 li {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 0.5rem 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0.5rem 0 0 0;
 }
 
 a {
-  text-decoration: none;  
+  text-decoration: none;
 }
