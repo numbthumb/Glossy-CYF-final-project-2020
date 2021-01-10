@@ -1,11 +1,29 @@
-import React,{ useState } from "react";
+import React,{ useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import MOCK_DATA from "./MOCK_DATA.json";
 import glossarylogo from "../Carousel/picture/gll.png";
 import "./SearchBar.scss";
 
 
 const SearchBar = () => {
+
+
+	/* const params = useParams();
+
+	 	 	useEffect(() => {
+		fetch(params.term);
+	}   */
 	const [searchTerm, setSearchTerm]= useState("");
+
+	//const [link, setLink] = useState("");
+	const handler = ((event) => {
+		console.log(searchTerm);
+
+		setSearchTerm(event.target.value);
+
+	});
+
+
 	return (
 		<div>
 			<div className="search-bar" >
@@ -16,21 +34,27 @@ const SearchBar = () => {
 				/></div>
 				<div className="search-bar-container">
 					<input type="text" placeholder="Search..."
-						onChange={(event) => {
-							setSearchTerm(event.target.value);
-						}}
+						onChange={handler}
 					/> </div>
 			</div>
 			{MOCK_DATA.filter((val) => {
 				if (searchTerm == "") {
+					console.log(val);
 					return val;
 				} else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-					return val;
+					return (
+						<div>
+							{console.log(searchTerm)};
+
+						</div>
+					);
 				}
 			}).map((val,key) => {
 				return (
 					<div className="user" key={key}>
-						<p>{val.name} </p>
+						<Link to={`/${val.name}`}>
+							<p>{val.name} </p>
+						</Link>
 					</div>
 				);
 			})}
