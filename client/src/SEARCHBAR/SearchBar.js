@@ -2,6 +2,7 @@ import React,{ useState } from "react";
 import MOCK_DATA from "./MOCK_DATA.json";
 import glossarylogo from "../Carousel/picture/gll.png";
 import "./SearchBar.scss";
+import { Button } from "react-bootstrap";
 
 
 const SearchBar = () => {
@@ -14,12 +15,16 @@ const SearchBar = () => {
 					src={glossarylogo}
 					alt="glossary-bar"
 				/></div>
-				<div className="search-bar-container">
+				<div className="search-container">
+
 					<input type="text" placeholder="Search..."
 						onChange={(event) => {
 							setSearchTerm(event.target.value);
 						}}
-					/> </div>
+					/>
+					<Button variant="primary" className="search-button"  >
+          			GO
+					</Button>{" "}</div>
 			</div>
 			{MOCK_DATA.filter((val) => {
 				if (searchTerm == "") {

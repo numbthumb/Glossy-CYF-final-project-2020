@@ -3,15 +3,34 @@
     flex-direction: column;
     margin: auto;
     align-items: center;
+    
 }
 .glossary-logo{
     width: 30rem;
 }
 .search-bar{
-    width: 35rem;
+    width: 40rem;
 }
-.search-bar-container{
-    border:2px solid grey;
+.search-container input {
+width: 20rem;
+border-radius: 15px;
+padding:12px;
+border:none;
+
+}
+.search-container{
+    width:31rem;
     padding:10px;
     background-color:#d12f2f;
+    display:flex;
+    justify-content:space-around;
+    border-radius: 15px;
+}
+
+.search-button{
+background: #EFEFEF;
+width: 5rem;
+border-radius: 15px;
+margin-left:-1.5rem;
+color:black;
 }
