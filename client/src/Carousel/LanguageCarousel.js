@@ -22,7 +22,7 @@ function LanguageCarousel () {
 	return (
 		<Carousel indicators= {false} >
 			{items.map((item, index) => [items[(index+l -1)%l], item,items[(index+1)%l]])
-				.map((group, index) => <Carousel.Item interval={1000} key={index} >
+				.map((group, index) => <Carousel.Item interval={2000} key={index} >
 					<Link to={group[0].route}><img
 						className="gallery-cell"
 						src={group[0].src}
