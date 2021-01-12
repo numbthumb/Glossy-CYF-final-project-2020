@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import MOCK_DATA from "./MOCK_DATA.json";
 import glossarylogo from "../Carousel/picture/gll.png";
 import "./SearchBar.scss";
+import { Button } from "react-bootstrap";
 import { getMessage, Terms, getLanguage } from "../service";
 
 const SearchBar = () => {
@@ -34,8 +35,17 @@ const SearchBar = () => {
 					src={glossarylogo}
 					alt="glossary-bar"
 				/></div>
-				<div className="search-bar-container">
+				<div className="search-container">
+
 					<input type="text" placeholder="Search..."
+						onChange={(event) => {
+							setSearchTerm(event.target.value);
+						}}
+					/>
+					<Button variant="primary" className="search-button"  >
+          			GO
+					</Button>{" "}</div>
+
 						onChange={handler}
 					/> </div>
 			</div>
