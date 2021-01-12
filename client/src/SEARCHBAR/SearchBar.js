@@ -3,17 +3,11 @@ import { Link, useParams } from "react-router-dom";
 import MOCK_DATA from "./MOCK_DATA.json";
 import glossarylogo from "../Carousel/picture/gll.png";
 import "./SearchBar.scss";
-
+import { getMessage, Terms, getLanguage } from "../service";
 
 const SearchBar = () => {
-
-
-	/* const params = useParams();
-
-	 	 	useEffect(() => {
-		fetch(params.term);
-	}   */
-	const [searchTerm, setSearchTerm]= useState("");
+	const [searchTerm, setSearchTerm] = useState("");
+	const [termsFromDb, setTermsFromDb] = useState([]);
 
 	//const [link, setLink] = useState("");
 	const handler = ((event) => {
@@ -22,6 +16,14 @@ const SearchBar = () => {
 		setSearchTerm(event.target.value);
 
 	});
+
+	useEffect(() => {
+		async function getLang() {
+			const data = await getLanguage();
+			setTermsFromDb(data);
+		}
+		getLang();
+	}, []);
 
 
 	return (
@@ -37,23 +39,17 @@ const SearchBar = () => {
 						onChange={handler}
 					/> </div>
 			</div>
-			{MOCK_DATA.filter((val) => {
-				if (searchTerm == "") {
-					console.log(val);
-					return val;
-				} else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-					return (
-						<div>
-							{console.log(searchTerm)};
 
-						</div>
-					);
+			{termsFromDb.filter((val) => {
+				if (searchTerm === "") {
+					return false;
 				}
+				return (val.term.toLowerCase().includes(searchTerm.toLowerCase()));
 			}).map((val,key) => {
 				return (
 					<div className="user" key={key}>
-						<Link to={`/${val.name}`}>
-							<p>{val.name} </p>
+						<Link to={`/${val.programming_language}/${val.term}`}>
+							<p>{val.programming_language} - {val.term} </p>
 						</Link>
 					</div>
 				);

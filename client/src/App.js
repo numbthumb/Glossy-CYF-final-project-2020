@@ -42,7 +42,7 @@ export function App() {
 						<Carousel />
 
 					</Route>
-					<Route exact path={`/${term.name}`}>{console.log(term)}
+					<Route exact path="/:language/:term">
 						<AddTermUserBtn />
 						<SidebarNav language={language} setTerm={setTerm} />
 						<Body language={term} />
