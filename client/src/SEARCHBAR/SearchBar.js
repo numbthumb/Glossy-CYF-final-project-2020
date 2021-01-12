@@ -1,11 +1,31 @@
-import React,{ useState } from "react";
+import React,{ useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import MOCK_DATA from "./MOCK_DATA.json";
 import glossarylogo from "../Carousel/picture/gll.png";
 import "./SearchBar.scss";
-
+import { getMessage, Terms, getLanguage } from "../service";
 
 const SearchBar = () => {
-	const [searchTerm, setSearchTerm]= useState("");
+	const [searchTerm, setSearchTerm] = useState("");
+	const [termsFromDb, setTermsFromDb] = useState([]);
+
+	//const [link, setLink] = useState("");
+	const handler = ((event) => {
+		console.log(searchTerm);
+
+		setSearchTerm(event.target.value);
+
+	});
+
+	useEffect(() => {
+		async function getLang() {
+			const data = await getLanguage();
+			setTermsFromDb(data);
+		}
+		getLang();
+	}, []);
+
+
 	return (
 		<div>
 			<div className="search-bar" >
@@ -16,21 +36,21 @@ const SearchBar = () => {
 				/></div>
 				<div className="search-bar-container">
 					<input type="text" placeholder="Search..."
-						onChange={(event) => {
-							setSearchTerm(event.target.value);
-						}}
+						onChange={handler}
 					/> </div>
 			</div>
-			{MOCK_DATA.filter((val) => {
-				if (searchTerm == "") {
-					return val;
-				} else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-					return val;
+
+			{termsFromDb.filter((val) => {
+				if (searchTerm === "") {
+					return false;
 				}
+				return (val.term.toLowerCase().includes(searchTerm.toLowerCase()));
 			}).map((val,key) => {
 				return (
 					<div className="user" key={key}>
-						<p>{val.name} </p>
+						<Link to={`/${val.programming_language}/${val.term}`}>
+							<p>{val.programming_language} - {val.term} </p>
+						</Link>
 					</div>
 				);
 			})}

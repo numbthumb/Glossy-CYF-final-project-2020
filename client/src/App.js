@@ -31,17 +31,18 @@ export function App() {
 	}, []);
 
 	return (
+
 		<Router>
 			<Header />
 			<Container>
 				<Switch>
 					<Route exact path="/">
-						<Link to="/TermPage">
-							<SearchBar />
-							<Carousel />
-						</Link>
+
+						<SearchBar />
+						<Carousel />
+
 					</Route>
-					<Route exact path="/TermPage">
+					<Route exact path="/:language/:term">
 						<AddTermUserBtn />
 						<SidebarNav language={language} setTerm={setTerm} />
 						<Body language={term} />
@@ -58,4 +59,5 @@ export function App() {
 		</Router>
 	);
 }
+
 export default App;
