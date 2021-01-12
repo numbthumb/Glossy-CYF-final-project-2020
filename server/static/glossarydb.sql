@@ -10,7 +10,7 @@ CREATE TABLE terms (
   admin_id INT,
   programming_language VARCHAR(20),
   contributor_id INT,
-  creation_date DATE,
+  creation_date DATE DEFAULT NOW()zzzz,
   last_edit_date DATE
 );
 
