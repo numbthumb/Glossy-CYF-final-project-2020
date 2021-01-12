@@ -48,8 +48,10 @@ export function App() {
 					</Route>
 					<Route exact path="/:language/:term">
 						<AddTermUserBtn />
-						<SidebarNav language={language} setTerm={setTerm} />
-						<Body language={term} />
+						<div className="definition-container">
+							<SidebarNav language={language} setTerm={setTerm} />
+							<Body language={term} />
+						</div>
 					</Route>
 					<Route exact path="/:language">
 						<AddTermUserBtn />
