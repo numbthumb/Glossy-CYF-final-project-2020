@@ -1,9 +1,10 @@
 import React,{ useState, useEffect }from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Sidebar from "react-sidebar";
 
 
 const SidebarNav = ({ language, setTerm }) => {
+
 	return (
 		<div className="sidebar">
 			<ul className="SidebarList">
