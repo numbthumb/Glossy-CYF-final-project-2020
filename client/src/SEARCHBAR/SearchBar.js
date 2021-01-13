@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import MOCK_DATA from "./MOCK_DATA.json";
+// import MOCK_DATA from "./MOCK_DATA.json";
 import glossarylogo from "../Carousel/picture/gll.png";
 import "./SearchBar.scss";
 import { Button } from "react-bootstrap";
