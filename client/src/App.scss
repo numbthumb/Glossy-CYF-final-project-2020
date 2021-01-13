@@ -48,7 +48,10 @@
 //    justify-content: center;
 //    align-items: center;
 //    font-family: 'Courier New', Courier, monospace;
-
+.selected.row {
+    background-color: rgb(176, 187, 187);
+    margin: auto;
+}
 .sideBody{
     display: flex;
     align-items: flex-start;
