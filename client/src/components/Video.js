@@ -3,11 +3,11 @@ import ReactPlayer from "react-player";
 
 const Video = ({ links }) => {
 
-	console.log(links.map((link) => link.includes("https://www.youtube.com")));
+	console.log(links && links.map((link) => link.includes("https://www.youtube.com")));
 	console.log(links);
 	return (
 		<div className="youtubeRes">
-			{links.map((link, index) => {
+			{links ? links.map((link, index) => {
 
 				if (link.includes("https://www.youtube.com")) {
 					return(
@@ -26,7 +26,7 @@ const Video = ({ links }) => {
 					);
 				}
 
-			})}
+			}) : null}
 
 		</div>
 	);
