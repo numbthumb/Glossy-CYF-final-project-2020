@@ -12,12 +12,15 @@
     background-color: aliceblue;
 }
 
+#root >.container {
+    min-height: calc(100vh - 11rem - 6rem);
+}
 .body {
-
     width: 80%;
     margin: 2rem auto;
     text-align: center;
 }
+
 .sidebar{
     height: 100vh;
     width: 200px;
