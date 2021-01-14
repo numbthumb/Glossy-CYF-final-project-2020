@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Header from "./Header/Header.js";
@@ -10,22 +11,25 @@ import SearchBar from "./SEARCHBAR/SearchBar.js";
 // import logo from "./logo.svg";
 // import SidebarNav from "./TermPage/SidebarNav/SidebarNav.js";
 import AddTermUserBtn from "./TermPage/AddTermUserBtn.js";
-import { getMessage } from "./service";
+import { getMessage, Terms } from "./service";
 import Resources from "./components/Resources";
 import SidebarNav from "./components/SidebarNav";
 import Body from "./components/Body.js";
 import { getLanguage } from "./service";
+import { useParams } from "react-router-dom";
 
 export function App() {
 	const [language, setLanguage] = useState([]);
 	const [term, setTerm] = useState({});
+
+
 
 	useEffect(() => {
 		async function getLang() {
 			const data = await getLanguage();
 			console.log(data);
 			setLanguage(data);
-			setTerm(data[0]);
+
 		}
 		getLang();
 	}, []);
@@ -38,7 +42,7 @@ export function App() {
 				<Switch>
 					<Route exact path="/">
 
-						<SearchBar />
+						<SearchBar setTerm={setTerm} />
 						<Carousel />
 
 					</Route>

@@ -10,7 +10,7 @@ CREATE TABLE terms (
   admin_id INT,
   programming_language VARCHAR(20),
   contributor_id INT,
-  creation_date DATE DEFAULT NOW()zzzz,
+  creation_date DATE DEFAULT NOW(),
   last_edit_date DATE
 );
 
@@ -47,6 +47,12 @@ INSERT INTO terms (term, definitions, links, admin_id, programming_language, con
 INSERT INTO terms (term, definitions, links, admin_id, programming_language, contributor_id) VALUES ('Boolean','A JavaScript Boolean represents one of two values: true or false.', '{"https://www.youtube.com/watch?v=yVJR6QyF2uk", "https://www.youtube.com/watch?v=Rk-_syQluvc", "https://www.w3schools.com/js/js_booleans.asp", "https://developer.mozilla.org/en-US/docs/Glossary/Boolean"}', 1,'Javascript', 2);
 INSERT INTO terms (term, definitions, links, admin_id, programming_language, contributor_id) VALUES ('Array','An array is a special variable, which can hold more than one value at a time.','{"https://www.youtube.com/watch?v=R8rmfD9Y5-c", "https://www.youtube.com/watch?v=orAS-MBh5f4", "https://www.w3schools.com/js/js_arrays.asp", "https://developer.mozilla.org/en-US/docs/Glossary/array"}',1, 'Javascript',1);
 INSERT INTO terms (term, definitions, links, admin_id, programming_language, contributor_id) VALUES ('Object','The Object class represents one of JavaScripts data types. It is used to store various keyed collections and more complex entities.','{"https://www.youtube.com/watch?v=PFmuCDHHpwk", "https://www.youtube.com/watch?v=X0ipw1k7ygU", "https://www.w3schools.com/js/js_objects.asp", "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"}',2, 'Javascript',3);
+INSERT INTO terms (term, definitions, links, admin_id, programming_language, contributor_id) VALUES ('require()','A function used to import modules from other files or Node packages.','{"https://www.youtube.com/watch?v=HHilfLuFofw", "https://www.youtube.com/watch?v=DZSMhgklXmw", "https://nodejs.org/en/knowledge/getting-started/what-is-require/", "https://www.w3schools.com/nodejs/nodejs_modules.asp"}',2, 'Node',3);
+INSERT INTO terms (term, definitions, links, admin_id, programming_language, contributor_id) VALUES ('express.js','Express.js is a Node.js web application server framework, designed for building single-page, multi-page, and hybrid web applications','{"https://www.youtube.com/watch?v=45dAt9Gz8rE", "https://www.youtube.com/watch?v=AZDTM0DiLG8", "http://expressjs.com", "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs"}',2, 'Node',3);
+INSERT INTO terms (term, definitions, links, admin_id, programming_language, contributor_id) VALUES ('GET','The HTTP GET method requests a representation of the specified resource. Requests using GET should only be used to request data','{"https://www.youtube.com/watch?v=O9LbCvUEjVo", "https://www.youtube.com/watch?v=Sb8xyCa2p7A", "https://stackabuse.com/the-node-js-request-module/", "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET"}',2, 'Node',3);
+INSERT INTO terms (term, definitions, links, admin_id, programming_language, contributor_id) VALUES ('POST','The HTTP POST method sends data to the server. The type of the body of the request is indicated by the Content-Type header.','{"https://www.youtube.com/watch?v=Sb8xyCa2p7A", "https://www.youtube.com/watch?v=jL1K0DrGLzw", "https://nodejs.dev/learn/make-an-http-post-request-using-nodejs", "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET"}',2, 'Node',3);
+INSERT INTO terms (term, definitions, links, admin_id, programming_language, contributor_id) VALUES ('Node.js','Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that executes JavaScript code outside a web browser.','{"https://www.youtube.com/watch?v=TlB_eWDSMt4&t=21s", "https://www.youtube.com/watch?v=zQRrXTSkvfw", "https://www.freecodecamp.org/news/what-exactly-is-node-js-ae36e97449f5/", "https://nodejs.org/en/"}',2, 'Node',3);
+
 
 
 INSERT INTO contributors (contributor_name, region, email) VALUES ('Paul', 'West Midlands', 'Paul@com');

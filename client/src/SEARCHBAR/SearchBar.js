@@ -6,69 +6,70 @@ import "./SearchBar.scss";
 import { Button } from "react-bootstrap";
 import { getMessage, Terms, getLanguage } from "../service";
 
-const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [termsFromDb, setTermsFromDb] = useState([]);
+const SearchBar = ({ setTerm }) => {
+	const [searchTerm, setSearchTerm] = useState("");
+	const [termsFromDb, setTermsFromDb] = useState([]);
 
-  //const [link, setLink] = useState("");
-  const handler = (event) => {
-    console.log(searchTerm);
 
-    setSearchTerm(event.target.value);
-  };
+	//const [link, setLink] = useState("");
+	const handler = (event) => {
+		console.log(searchTerm);
 
-  useEffect(() => {
-    async function getLang() {
-      const data = await getLanguage();
-      setTermsFromDb(data);
-    }
-    getLang();
-  }, []);
+		setSearchTerm(event.target.value);
+	};
 
-  return (
-    <div>
-      <div className="search-bar">
-        <div>
-          <img
-            className="glossary-logo"
-            src={glossarylogo}
-            alt="glossary-bar"
-          />
-        </div>
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search..."
-            onChange={(event) => {
-              setSearchTerm(event.target.value);
-            }}
-          />
-          <Button variant="primary" className="search-button">
+	useEffect(() => {
+		async function getLang() {
+			const data = await getLanguage();
+			setTermsFromDb(data);
+		}
+		getLang();
+	}, []);
+
+	return (
+		<div>
+			<div className="search-bar">
+				<div>
+					<img
+						className="glossary-logo"
+						src={glossarylogo}
+						alt="glossary-bar"
+					/>
+				</div>
+				<div className="search-container">
+					<input
+						type="text"
+						placeholder="Search..."
+						onChange={(event) => {
+							setSearchTerm(event.target.value);
+						}}
+					/>
+					<Button variant="primary" className="search-button">
             GO
-          </Button>{" "}
-        </div>
-      </div>
+					</Button>{" "}
+				</div>
+			</div>
 
-      {termsFromDb
-        .filter((val) => {
-          if (searchTerm === "") {
-            return false;
-          }
-          return val.term.toLowerCase().includes(searchTerm.toLowerCase());
-        })
-        .map((val, key) => {
-          return (
-            <div className="user" key={key}>
-              <Link to={`/${val.programming_language}/${val.term}`}>
-                <p>
-                  {val.programming_language} - {val.term}{" "}
-                </p>
-              </Link>
-            </div>
-          );
-        })}
-    </div>
-  );
+			{termsFromDb
+				.filter((val) => {
+					if (searchTerm === "") {
+						return false;
+					}
+					return val.term.toLowerCase().includes(searchTerm.toLowerCase());
+				})
+				.map((val, key) => {
+					return (
+						<div className="user" key={key} onClick={() => setTerm(val)}>
+							<Link to={`/${val.programming_language}/${val.term}`}>
+								<p>
+									{val.programming_language} - {val.term}{" "}
+								</p>
+							</Link>
+						</div>
+					);
+				})}
+		</div>
+	);
 };
 
 export default SearchBar;
