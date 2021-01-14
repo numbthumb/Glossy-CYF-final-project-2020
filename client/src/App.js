@@ -51,6 +51,11 @@ export function App() {
 						<SidebarNav language={language} setTerm={setTerm} />
 						<Body language={term} />
 					</Route>
+					<Route exact path="/:language">
+						<AddTermUserBtn />
+						<SidebarNav language={language} setTerm={setTerm} />
+						{/* <Body language={term} /> */}
+					</Route>
 					<Route>
 						{/* <Link to="/LoginPage">
               <BackToHome />

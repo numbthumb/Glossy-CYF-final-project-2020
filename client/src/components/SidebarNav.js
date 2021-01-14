@@ -6,15 +6,14 @@ import Sidebar from "react-sidebar";
 const SidebarNav = ({ language, setTerm }) => {
 	const params=useParams();
 
+
 	return (
 		<div className="sidebar">
 			<ul className="SidebarList">
 
-				{language.filter((x)=> x.programming_language===params.language).map((value, key) => {
-					{console.log(value);
-					}return (
-
-
+				{language.filter(x=> x.programming_language.toLowerCase()===params.language.toLowerCase())
+				.map((value, key) => {
+					return (
 						<li
 							key={key}
 							className={params.term === value.term ? "selected row" : "row" }
@@ -23,7 +22,7 @@ const SidebarNav = ({ language, setTerm }) => {
 
 							}}
 						>
-							<Link>{value.term}</Link>
+							<Link to={`/${value.programming_language}/${value.term}`}>{value.term}</Link>
 						</li>
 					);
 				})}
