@@ -9,7 +9,7 @@ function AddTermUserBtn() {
 
   return (
       <>
-        <div>
+        <div className="addTermUserButtonContainer">
           <Button onClick={handleClick}>Add Term</Button>
         </div>
         <div>{showText && <AddTermUserForm />}</div>
