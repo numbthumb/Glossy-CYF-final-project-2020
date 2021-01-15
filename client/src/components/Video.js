@@ -22,7 +22,9 @@ const Video = ({ links }) => {
 				} else {
 					return(
 
-						<li>{link}</li>
+						<li>
+							<a href={link} target="_blank">{link}</a>
+							</li>
 					);
 				}
 
