@@ -42,7 +42,7 @@ export function App() {
 				<Switch>
 					<Route exact path="/">
 
-						<SearchBar setTerm={setTerm} />
+						<SearchBar setTerm={setTerm} termsFromDb={language} />
 						<Carousel />
 
 					</Route>

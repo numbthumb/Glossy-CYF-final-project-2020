@@ -6,27 +6,28 @@ import "./SearchBar.scss";
 import { Button } from "react-bootstrap";
 import { getMessage, Terms, getLanguage } from "../service";
 
-const SearchBar = ({ setTerm }) => {
+const search = (search, list)=>{
+	return list.filter((val) => {
+		if (search === "") {
+			return false;
+		}
+		return val.term.toLowerCase().includes(search.toLowerCase());
+	});
+};
+
+const SearchBar = ({ setTerm, termsFromDb }) => {
 	const [searchTerm, setSearchTerm] = useState("");
-	const [termsFromDb, setTermsFromDb] = useState([]);
-	const [link, setLink] = useState("/Home"); //Home is meaningless but doesn't throw an error
 
 
-	//const [link, setLink] = useState("");
+
+
 	const handler = (event) => {
 		console.log(searchTerm);
 
 		setSearchTerm(event.target.value);
 	};
 
-	useEffect(() => {
-		async function getLang() {
-			const data = await getLanguage();
-			setTermsFromDb(data);
-			console.log(termsFromDb);
-		}
-		getLang();
-	}, []);
+
 	console.log(termsFromDb);
 
 	return (
@@ -47,48 +48,34 @@ const SearchBar = ({ setTerm }) => {
 							setSearchTerm(event.target.value);
 						}}
 					/>
-					<Link to={link}>
-						<Button
-							variant="primary"
-							className="search-button"
-							onClick={setLink(
-								termsFromDb.filter((entry)=>entry.term===searchTerm).map((term)=>{
-									 `/${term.programming_language}/${term.term}`;
-								})
-							)}
-						>
+
+
+					{search(searchTerm, termsFromDb).length === 1 && search(searchTerm, termsFromDb).map((result)=>{
+						return (
+							<Link to={`/${result.programming_language}/${result.term}`} key={result}>
+								<Button variant="primary" className="search-button" >
                             GO
-						</Button>
-					</Link>
+								</Button>
+							</Link>);
+					}) }
 				</div>
 			</div>
 
-			{termsFromDb
-				.filter((val) => {
-					if (searchTerm === "") {
-						return false;
-					}
-					return val.term
-						.toLowerCase()
-						.includes(searchTerm.toLowerCase());
-				})
-				.map((val, key) => {
-					return (
-						<div
-							className="user"
-							key={key}
-							onClick={() => setTerm(val)}
-						>
-							<Link
-								to={`/${val.programming_language}/${val.term}`}
-							>
-								<p>
-									{val.programming_language} - {val.term}{" "}
-								</p>
-							</Link>
-						</div>
-					);
-				})}
+			{search(searchTerm, termsFromDb).map((val, key) => {
+				return (
+					<div
+						className="user"
+						key={key}
+						onClick={() => setTerm(val)}
+					>
+						<Link to={`/${val.programming_language}/${val.term}`}>
+							<p>
+								{val.programming_language} - {val.term}{" "}
+							</p>
+						</Link>
+					</div>
+				);
+			})}
 		</div>
 	);
 };
