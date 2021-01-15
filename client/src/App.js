@@ -43,7 +43,7 @@ export function App() {
 					<Route exact path="/">
 
 						<SearchBar setTerm={setTerm} termsFromDb={language} />
-						<Carousel />
+						<Carousel setTerm = {setTerm} />
 
 					</Route>
 					<Route exact path="/:language/:term">
