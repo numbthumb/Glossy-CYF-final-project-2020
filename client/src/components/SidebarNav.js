@@ -11,21 +11,21 @@ const SidebarNav = ({ language, setTerm }) => {
 		<div className="sidebar">
 			<ul className="SidebarList">
 
-				{language.filter(x=> x.programming_language.toLowerCase()===params.language.toLowerCase())
-				.map((value, key) => {
-					return (
-						<li
-							key={key}
-							className={params.term === value.term ? "selected row" : "row" }
-							onClick={() => {
-								setTerm(value);
+				{language.filter((x)=> x.programming_language.toLowerCase()===params.language.toLowerCase())
+					.map((value, key) => {
+						return (
+							<li
+								key={key}
+								className={params.term === value.term ? "selected row" : "row" }
+								onClick={() => {
+									setTerm(value);
 
-							}}
-						>
-							<Link to={`/${value.programming_language}/${value.term}`}>{value.term}</Link>
-						</li>
-					);
-				})}
+								}}
+							>
+								<Link to={`/${value.programming_language}/${value.term}`}>{value.term}</Link>
+							</li>
+						);
+					})}
 			</ul>
 		</div>
 	);
