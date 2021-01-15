@@ -40,7 +40,7 @@ const Footer = () => {
 				</ul>
 			</div>
 			<div className="registration">
-                © All rigths reserved | Registered charity 1174929 |{" "}
+                © All rights reserved | Registered charity 1174929 |{" "}
 				<a
 					href="https://codeyourfuture.io/"
 					target="_blank"
