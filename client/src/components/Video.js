@@ -1,6 +1,6 @@
 import React from "react";
 import ReactPlayer from "react-player";
-
+import "./Video.scss";
 const Video = ({ links }) => {
 
 	console.log(links && links.map((link) => link.includes("https://www.youtube.com")));
@@ -17,14 +17,17 @@ const Video = ({ links }) => {
 							allow='autoplay; encrypted-media'
 							allowFullScreen
 							title='video'
+							height={'180px'}
+							  width={'324px' }
+							  
 						/>
 					);
 				} else {
 					return(
 
-						<li>
-							<a href={link} target="_blank">{link}</a>
-							</li>
+						
+							<a className="externalLink" href={link} target="_blank">{link}</a>
+					
 					);
 				}
 
