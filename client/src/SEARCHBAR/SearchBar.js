@@ -52,11 +52,19 @@ const SearchBar = ({ setTerm, termsFromDb }) => {
 
 					{search(searchTerm, termsFromDb).length === 1 && search(searchTerm, termsFromDb).map((result)=>{
 						return (
-							<Link to={`/${result.programming_language}/${result.term}`} key={result}>
-								<Button variant="primary" className="search-button" >
-                            GO
+							<Link
+								to={`/${result.programming_language}/${result.term}`}
+								key={result}
+								onClick={() => setTerm(result)}
+							>
+								<Button
+									variant="primary"
+									className="search-button"
+								>
+                                    GO
 								</Button>
-							</Link>);
+							</Link>
+						);
 					}) }
 				</div>
 			</div>
