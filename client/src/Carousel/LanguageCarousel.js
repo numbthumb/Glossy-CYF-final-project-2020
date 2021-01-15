@@ -9,7 +9,7 @@ import nodeImage from "./picture/node.png";
 import sqlImage from "./picture/sql.png";
 import { Link } from "react-router-dom";
 
-function LanguageCarousel () {
+function LanguageCarousel ({ setTerm }) {
 	const items = [
 		{ src: htmlImage, alt: "html", route: "/html" },
 		{ src: cssImage, alt: "css" ,route: "/CSS" },
@@ -20,28 +20,38 @@ function LanguageCarousel () {
 	];
 	const l = items.length;
 	return (
-		<Carousel indicators= {false} >
-			{items.map((item, index) => [items[(index+l -1)%l], item,items[(index+1)%l]])
-				.map((group, index) => <Carousel.Item interval={2000} key={index} >
-					<Link to={group[0].route}><img
-						className="gallery-cell"
-						src={group[0].src}
-						alt={group[0].alt}
-					/></Link>
-					<Link to={group[1].route}><img
-						className="gallery-cell"
-						src={group[1].src}
-						alt={group[1].alt}
-					/></Link>
-					<Link to={group[2].route}><img
-						className="gallery-cell"
-						src={group[2].src}
-						alt={group[2].alt}
-					/></Link>
-
-				</Carousel.Item> ) }
-
-
+		<Carousel indicators={false}>
+			{items
+				.map((item, index) => [
+					items[(index + l - 1) % l],
+					item,
+					items[(index + 1) % l],
+				])
+				.map((group, index) => (
+					<Carousel.Item interval={2000} key={index}>
+						<Link to={group[0].route} onClick={()=>setTerm({})}>
+							<img
+								className="gallery-cell"
+								src={group[0].src}
+								alt={group[0].alt}
+							/>
+						</Link>
+						<Link to={group[1].route} onClick={()=> setTerm({})}>
+							<img
+								className="gallery-cell"
+								src={group[1].src}
+								alt={group[1].alt}
+							/>
+						</Link>
+						<Link to={group[2].route} onClick={()=>setTerm({})}>
+							<img
+								className="gallery-cell"
+								src={group[2].src}
+								alt={group[2].alt}
+							/>
+						</Link>
+					</Carousel.Item>
+				))}
 		</Carousel>
 	);
 }

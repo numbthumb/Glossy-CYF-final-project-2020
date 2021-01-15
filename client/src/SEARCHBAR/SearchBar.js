@@ -6,69 +6,86 @@ import "./SearchBar.scss";
 import { Button } from "react-bootstrap";
 import { getMessage, Terms, getLanguage } from "../service";
 
-const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [termsFromDb, setTermsFromDb] = useState([]);
+const search = (search, list)=>{
+	return list.filter((val) => {
+		if (search === "") {
+			return false;
+		}
+		return val.term.toLowerCase().includes(search.toLowerCase());
+	});
+};
 
-  //const [link, setLink] = useState("");
-  const handler = (event) => {
-    console.log(searchTerm);
+const SearchBar = ({ setTerm, termsFromDb }) => {
+	const [searchTerm, setSearchTerm] = useState("");
 
-    setSearchTerm(event.target.value);
-  };
 
-  useEffect(() => {
-    async function getLang() {
-      const data = await getLanguage();
-      setTermsFromDb(data);
-    }
-    getLang();
-  }, []);
 
-  return (
-    <div>
-      <div className="search-bar">
-        <div>
-          <img
-            className="glossary-logo"
-            src={glossarylogo}
-            alt="glossary-bar"
-          />
-        </div>
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search..."
-            onChange={(event) => {
-              setSearchTerm(event.target.value);
-            }}
-          />
-          <Button variant="primary" className="search-button">
-            GO
-          </Button>{" "}
-        </div>
-      </div>
 
-      {termsFromDb
-        .filter((val) => {
-          if (searchTerm === "") {
-            return false;
-          }
-          return val.term.toLowerCase().includes(searchTerm.toLowerCase());
-        })
-        .map((val, key) => {
-          return (
-            <div className="user" key={key}>
-              <Link to={`/${val.programming_language}/${val.term}`}>
-                <p>
-                  {val.programming_language} - {val.term}{" "}
-                </p>
-              </Link>
-            </div>
-          );
-        })}
-    </div>
-  );
+	const handler = (event) => {
+		console.log(searchTerm);
+
+		setSearchTerm(event.target.value);
+	};
+
+
+	console.log(termsFromDb);
+
+	return (
+		<div>
+			<div className="search-bar">
+				<div>
+					<img
+						className="glossary-logo"
+						src={glossarylogo}
+						alt="glossary-bar"
+					/>
+				</div>
+				<div className="search-container">
+					<input
+						type="text"
+						placeholder="Search..."
+						onChange={(event) => {
+							setSearchTerm(event.target.value);
+						}}
+					/>
+
+
+					{search(searchTerm, termsFromDb).length === 1 && search(searchTerm, termsFromDb).map((result)=>{
+						return (
+							<Link
+								to={`/${result.programming_language}/${result.term}`}
+								key={result}
+								onClick={() => setTerm(result)}
+							>
+								<Button
+									variant="primary"
+									className="search-button"
+								>
+                                    GO
+								</Button>
+							</Link>
+						);
+					}) }
+				</div>
+			</div>
+
+			{search(searchTerm, termsFromDb).map((val, key) => {
+				return (
+					<div
+						className="user"
+						key={key}
+						onClick={() => setTerm(val)}
+					>
+						<Link to={`/${val.programming_language}/${val.term}`}>
+							<p>
+								{val.programming_language} - {val.term}{" "}
+							</p>
+						</Link>
+					</div>
+				);
+			})}
+		</div>
+	);
 };
 
 export default SearchBar;
