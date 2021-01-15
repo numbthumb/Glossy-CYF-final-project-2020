@@ -8,15 +8,15 @@ const Footer = () => {
 				<ul>
 					<label>Our community</label>
 					<li>
-						<a href="https://codeyourfuture.io/">Website</a>
+						<a href="https://codeyourfuture.io/" target="_blank">Website</a>
 					</li>
 					<li>
-						<a href="https://docs.codeyourfuture.io/">
+						<a href="https://docs.codeyourfuture.io/" target="_blank">
                             Documentation
 						</a>
 					</li>
 					<li>
-						<a href="https://github.com/CodeYourFuture">GitHub</a>
+						<a href="https://github.com/CodeYourFuture"target="_blank">GitHub</a>
 					</li>
 				</ul>
 			</div>
@@ -25,17 +25,17 @@ const Footer = () => {
 				<ul>
 					<label>Social media</label>
 					<li>
-						<a href="https://www.instagram.com/codeyourfuture_/?hl=en">
+						<a href="https://www.instagram.com/codeyourfuture_/?hl=en"target="_blank">
                             Instagram
 						</a>
 					</li>
 					<li>
-						<a href="https://www.facebook.com/codeyourfuture.io/">
+						<a href="https://www.facebook.com/codeyourfuture.io/" target="_blank">
                             Facebook
 						</a>
 					</li>
 					<li>
-						<a href="https://twitter.com/CodeYourFuture">Twitter</a>
+						<a href="https://twitter.com/CodeYourFuture" target="_blank">Twitter</a>
 					</li>
 				</ul>
 			</div>
