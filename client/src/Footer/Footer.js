@@ -48,7 +48,7 @@ const Footer = () => {
 				>
                     CodeYourFuture
 				</a>{" "}
-                | 2020 Copyright{" "}
+                | 2021 Copyright{" Team Glossy"}
 			</div>
 		</footer>
 	);
