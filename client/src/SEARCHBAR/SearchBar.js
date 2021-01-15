@@ -9,6 +9,7 @@ import { getMessage, Terms, getLanguage } from "../service";
 const SearchBar = ({ setTerm }) => {
 	const [searchTerm, setSearchTerm] = useState("");
 	const [termsFromDb, setTermsFromDb] = useState([]);
+	const [link, setLink] = useState("/Home"); //Home is meaningless but doesn't throw an error
 
 
 	//const [link, setLink] = useState("");
@@ -22,9 +23,11 @@ const SearchBar = ({ setTerm }) => {
 		async function getLang() {
 			const data = await getLanguage();
 			setTermsFromDb(data);
+			console.log(termsFromDb);
 		}
 		getLang();
 	}, []);
+	console.log(termsFromDb);
 
 	return (
 		<div>
@@ -44,9 +47,19 @@ const SearchBar = ({ setTerm }) => {
 							setSearchTerm(event.target.value);
 						}}
 					/>
-					<Button variant="primary" className="search-button">
-            GO
-					</Button>{" "}
+					<Link to={link}>
+						<Button
+							variant="primary"
+							className="search-button"
+							onClick={setLink(
+								termsFromDb.filter((entry)=>entry.term===searchTerm).map((term)=>{
+									 `/${term.programming_language}/${term.term}`;
+								})
+							)}
+						>
+                            GO
+						</Button>
+					</Link>
 				</div>
 			</div>
 
@@ -55,12 +68,20 @@ const SearchBar = ({ setTerm }) => {
 					if (searchTerm === "") {
 						return false;
 					}
-					return val.term.toLowerCase().includes(searchTerm.toLowerCase());
+					return val.term
+						.toLowerCase()
+						.includes(searchTerm.toLowerCase());
 				})
 				.map((val, key) => {
 					return (
-						<div className="user" key={key} onClick={() => setTerm(val)}>
-							<Link to={`/${val.programming_language}/${val.term}`}>
+						<div
+							className="user"
+							key={key}
+							onClick={() => setTerm(val)}
+						>
+							<Link
+								to={`/${val.programming_language}/${val.term}`}
+							>
 								<p>
 									{val.programming_language} - {val.term}{" "}
 								</p>
