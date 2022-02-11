@@ -75,7 +75,7 @@
     "morgan": "^1.10.0",
     "node": "^15.4.0",
     "node-modules": "^1.0.1",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "pg": "^8.4.1",
     "react-bootstrap": "^1.4.0",
     "react-bootstrap-sidebar": "0.0.1",
